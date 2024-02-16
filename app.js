@@ -72,19 +72,35 @@ productsSection.innerHTML += `<div>
 <p>${product.descrioption}</p>
 <img src="./magnet.jpg"/${product.picture}>
 <h3>${product.price} Fr.-</h3>
-<a href="#" cass="addToCart">Bestellen</a>
-</div>`})
+<a id="${product.id}" class="addToCart">Bestellen</a>
+</div>`
+})
 
 //Kosárkezelés
 const cart = {}
 
+// gyűjtsók ki az addToCart css klassú elemeket
 const addToCartButtons = document.getElementsByClassName('addToCart')
-const buttonCount = addToCartButtons.length
-for(let i = 0;i < buttonCount; i++){
-    addToCartButtons[i].addEventListener('click', function (event){
-        console.log(event)
-    })
 
+//nézzük meg hány darab van belőle
+const buttonCount = addToCartButtons.length
+
+//lépeseggünk végig rajta
+for(let i = 0;i < buttonCount; i++){
+
+    //adjunk hozzájuk egyesével egy click figyelőt
+    addToCartButtons[i].addEventListener('click', function (event) {
+        // ha még nincs benne a kosárban akkor adjuk hozzá egy darabbal
+        if (cart[event.target.id] == undefined) {
+            cart[event.target.id] = 1
+        } else {
+            //ha már benne van akkor növeljük a darabszámot
+            cart[event.target.id]++
+        }  
+    })
 }
 
-addToCartButtons
+// tegyünk réá egy click figyelőt a kosár iconra
+// jelenítsük meg ami a kosárban van
+//lépesgessünk végig a cart-on és a products tömbből keressük ki a szóban forgó terméket és jelenítsük meg a nevét , a cart-ban lévő darabszámot és a termék árát
+// a végén jelenítsük meg a teljes vásárlási összeget
