@@ -1,3 +1,5 @@
+
+// oldalsó menü kezelése
 const burger = document.getElementById('burger')
 const nav = document.getElementById('nav')
 
@@ -8,8 +10,11 @@ burger.addEventListener('click', function (event){
     burger.classList.toggle('fi-arrow-left')
 })
 
+//Termékek beillesztése
+// TODO ez általában a backendről jön
 const products = [
     {
+        id: 10,
         name: ' Magnet',
         picture: 'magnet.jpp',
         descrioption: 'Verschidene product für Uns',
@@ -17,6 +22,7 @@ const products = [
         instock: true
     },
     {
+        id: 11,
         name: ' Magnet 6stück',
         picture: 'magnet.jpp',
         descrioption: 'Verschidene product für Uns',
@@ -24,6 +30,31 @@ const products = [
         instock: true
     },
     {
+        id: 12,
+        name: ' Magnet 6stück',
+        picture: 'magnet.jpp',
+        descrioption: 'Verschidene product für Uns',
+        price: 15,
+        instock: true
+    },
+    {
+        id: 13,
+        name: ' Magnet',
+        picture: 'magnet.jpp',
+        descrioption: 'Verschidene product für Uns',
+        price: 9,
+        instock: true
+    },
+    {
+        id: 14,
+        name: ' Magnet',
+        picture: 'magnet.jpp',
+        descrioption: 'Verschidene product für Uns',
+        price: 9,
+        instock: true
+    },
+    {
+        id: 15,
         name: ' Magnet 9stück',
         picture: 'magnet.jpp',
         descrioption: 'Verschidene product für Uns',
@@ -41,5 +72,19 @@ productsSection.innerHTML += `<div>
 <p>${product.descrioption}</p>
 <img src="./magnet.jpg"/${product.picture}>
 <h3>${product.price} Fr.-</h3>
-<a href="#">Bestellen</a>
+<a href="#" cass="addToCart">Bestellen</a>
 </div>`})
+
+//Kosárkezelés
+const cart = {}
+
+const addToCartButtons = document.getElementsByClassName('addToCart')
+const buttonCount = addToCartButtons.length
+for(let i = 0;i < buttonCount; i++){
+    addToCartButtons[i].addEventListener('click', function (event){
+        console.log(event)
+    })
+
+}
+
+addToCartButtons
