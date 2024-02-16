@@ -56,3 +56,12 @@ nav a{
 main h1{
     margin: 0 1rem;
 }
+#products {
+    display: flex;
+}
+#products h2{
+    background: #D8315B;
+    color:#fff;
+    padding: .3rem 1rem;
+
+}
