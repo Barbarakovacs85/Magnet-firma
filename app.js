@@ -18,14 +18,14 @@ const products = [
     },
     {
         name: ' Magnet 6stück',
-        picture: 'magnet2.jpp',
+        picture: 'magnet.jpp',
         descrioption: 'Verschidene product für Uns',
         price: 15,
         instock: true
     },
     {
         name: ' Magnet 9stück',
-        picture: 'magnet3.jpp',
+        picture: 'magnet.jpp',
         descrioption: 'Verschidene product für Uns',
         price: 25,
         instock: true,
@@ -34,9 +34,12 @@ const products = [
 ]
 
 const productsSection = document.getElementById('products')
-productsSection.innerHTML = `<div>
-<h2>${products[0].name}</h2>
-<p>${products[0].descrioption}</p>
-<img src="./magnet.jpg"/${products[0].picture}>
-<h3>${products[0].price} Fr.-</h3>
-</div>`
+
+ products.forEach(product =>{
+productsSection.innerHTML += `<div>
+<h2>${product.name}</h2>
+<p>${product.descrioption}</p>
+<img src="./magnet.jpg"/${product.picture}>
+<h3>${product.price} Fr.-</h3>
+<a href="#">Bestellen</a>
+</div>`})

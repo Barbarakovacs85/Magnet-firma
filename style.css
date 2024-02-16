@@ -17,7 +17,8 @@ i{
     margin-right: 1rem;
 }
 h1{
-    font-size: 1.8rem;
+    font-size: 3rem;
+    text-align: center;
 }
 header{
     margin-bottom:1rem;
@@ -57,11 +58,39 @@ main h1{
     margin: 0 1rem;
 }
 #products {
-    display: flex;
+    text-align: center;
+}
+#products div {
+    margin:0.5rem;
 }
 #products h2{
     background: #D8315B;
     color:#fff;
     padding: .3rem 1rem;
+    border-bottom: .3rem solid #fff;
+}
+#products p{
+    font-variant :small-caps;
+    font-size: 1.5rem;
+}
+#products img {
+    width:70% ;
+}
+#products h3{
+    font-weight: bold;
+    font-size: 3rem;
+}
+#products a{
+    background: #7c6a;
+    padding: .5rem 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
 
+@media (min-width:640px) {
+    #products{
+    display:flex;
+    
+    }
 }
