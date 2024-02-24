@@ -1,25 +1,25 @@
 <?php
-if (isset($success_msg)) {
-    foreach ($success_msg as $success_msg) {
-        echo '<script>swal("'.$succes_msg.'", "", "success");</script>';
+if (isset($success_msg) && is_array($success_msg)) {
+    foreach ($success_msg as $success) {
+        echo '<script>swal("' . $success . '", "", "success");</script>';
     }
 }
 
-if (isset($warning_msg)) {
-    foreach ($warnming_msg as $warning_msg) {
-        echo '<script>swal("'.$warning_msg.'", "", "warning");</script>';
+if (isset($warning_msg) && is_array($warning_msg)) {
+    foreach ($warning_msg as $warning) {
+        echo '<script>swal("' . $warning . '", "", "warning");</script>';
     }
 }
 
-if (isset($infor_msg)) {
-    foreach ($info_msg as $info_msg) {
-        echo '<script>swal("'.$info_msg.'", "", "info");</script>';
+if (isset($info_msg) && is_array($info_msg)) {
+    foreach ($info_msg as $info) {
+        echo '<script>swal("' . $info . '", "", "info");</script>';
     }
 }
 
-if (isset($error_msg)) {
-    foreach ($error_msg as $error_msg) {
-        echo '<script>swal("'.$error_msg.'", "", "error");</script>';
+if (isset($error_msg) && is_array($error_msg)) {
+    foreach ($error_msg as $error) {
+        echo '<script>swal("' . $error . '", "", "error");</script>';
     }
 }
 ?>

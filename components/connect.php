@@ -1,15 +1,15 @@
 <?php
 $db_name = 'mysql:host=localhost;dbname=magnet_db';
-$user_name = "root";
+$user_name = 'root';
 $user_password = '';
 
 $conn = new PDO($db_name, $user_name, $user_password);
 
-if(!$conn) {
+if (!$conn) {
     echo "not connected";
 }
 
-function unique_ide(){
+function unique_id(){
     $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charLength = strlen($chars);
     $randomString = '';
