@@ -17,7 +17,7 @@ if (isset($_COOKIE['sELLER_ID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbi Magnet</title>
-    <link rel="stylesheet" type="text/css" href="../css/amin_style.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin_style.css">
     <!-- ---------------font awesome cdn link------------------  -->
     <!-- --------------box icon cdn link ------------------------ -->
     <link rel="stylesheet" href='http://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'>
