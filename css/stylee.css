@@ -1,0 +1,114 @@
+:root{
+    --black: #272d3b;
+    --red: #ed176f;
+    --coral: #f7817f;
+    --gradient:linear-gradient(90deg, var(var(--red), var(var(--coral))));
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline:none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+*::selection{
+    background-color: var(--red);
+    color:#fff;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+}
+body{
+    width: 100%;
+}
+section{
+    padding:3rem 9%
+}
+.btn{
+    display: inline-block;
+    padding: .7rem 3rem;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background-color: #76a713;
+    color: #fff;
+    cursor:pointer;
+    font-size: 1.7rem;
+}
+.btn:hover{
+    transform: scale(1.1);
+    background: var(--gradient);
+}
+ .heading{
+    text-align: center;
+    color: #76a713;
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+} 
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    z-index: 1000;
+    padding: 2rem 9%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .navbar a{
+    font-size: 3.5rem;
+    margin-left: 2rem;
+    color: #76a713;
+}
+header .navbar a:hover{
+    color: rgb(14, 45, 14);
+}
+#menu-bar{
+    font-size: 3rem;
+    color: #76a713;
+    cursor: pointer;
+    display:none;
+}
+@media (max-width:760px){
+    #menu-bar{
+        display:block;
+    }
+    header .navbar{
+        position: absolute;
+        top:100%;
+        left:0;
+        right: 0;
+        background-color: #fff;
+        border-top: .1rem solid #fff3;
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    header .navbar.nav-toggle{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    header .navbar a{
+        display: block;
+        margin: 1.5rem 0;
+        padding: 1rem;
+        background: red;
+        text-align: center;
+        border-radius: .5rem;
+        color:#fff;
+    }
+    header .navbar a:hover{
+        color: var(--black);
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+}
