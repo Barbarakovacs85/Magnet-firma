@@ -46,11 +46,12 @@ section{
  .heading{
     text-align: center;
     color: #76a713;
-    font-size: 3rem;
+    font-size: 5rem;
     text-transform: uppercase;
     padding: 1rem 0;
     -webkit-background-clip: text;
     background-clip: text;
+    margin-top:10rem;
 } 
 header{
     position: fixed;
@@ -69,6 +70,7 @@ header .navbar a{
     font-size: 3.5rem;
     margin-left: 2rem;
     color: #76a713;
+   
 }
 header .navbar a:hover{
     color: rgb(14, 45, 14);
@@ -79,6 +81,84 @@ header .navbar a:hover{
     cursor: pointer;
     display:none;
 }
+.home{
+    background-image: url('../image/background.png');
+    background-position:center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.home-detail{
+    padding-left:14rem;
+}
+.home-detail h1{
+    font-size: 6rem;
+}
+.home-detail p{
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.usage{
+    background-image: url(../image/hatter1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;   
+}
+.usage .row{
+    display:flex;
+    justify-content: center;
+  
+}
+.usage .row .divider{
+    margin-bottom:150px;
+    padding: 1rem;
+    width: 50%;
+    margin-left:100px;
+}
+
+.usage .row .box-container .box {
+    padding: 1rem;
+   
+}
+.usage .row .box-container .box i{
+    color:var(--red);
+    padding: 1rem 0;
+}
+.usage .row .box-container .box h3{
+    color:var(--black);
+    font-size: 2.5rem;
+}
+.usage .row .box-container .box p{
+    color: #666;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+.usage .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px; 
+}
+
+.usage .box-container:nth-child(2) {
+    margin-top: 0; 
+}
+.usage .row .box-container .box .magnet{
+    position: relative;
+    margin-bottom:15px;
+}
+.usage .row .box-container .box .maschine img,
+.usage .row .box-container .box .cuter img,
+.usage .row .box-container .box .presser img,
+.usage .row .box-container .box .magnet img {
+    width: 100%;
+}
+
+
 @media (max-width:760px){
     #menu-bar{
         display:block;
