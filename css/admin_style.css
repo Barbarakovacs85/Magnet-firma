@@ -18,7 +18,8 @@
     --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.40);
 }
 body{
-    background-image:url(../image/image.png.jpg) ;
+    background-image:url(../image/hatter1.png) ;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }

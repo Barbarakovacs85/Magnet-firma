@@ -274,6 +274,62 @@ header .navbar a:hover{
     font-weight: bold;
     font-size: 2rem;
 }
+.blog{
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+}
+.heading{
+    margin-top: -50px;
+}
+.blog .box-container{
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.blog .box-container .box{
+    background: rgba(255,255,255, 0.03);
+    border: 2px solid #dcdcdc;
+    backdrop-filter:blur(0.5px);
+    box-shadow: 0 20px 50px rgba(40, 113, 85, 0.4);
+    text-align: center;
+    margin: 1rem;
+    padding: 2rem;
+    flex: 1 1 33rem;
+    border-radius: .5rem;
+}
+.blog .box-container .img-box{
+    transition:  .5s;
+    overflow: hidden;
+}
+.blog .box-container .img-box img{
+    width: 100%;
+}
+.blog .box-container .box:hover img{
+    transform: scale(1.2);
+}
+.blog .box-container .box .date{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 14px;
+}
+.blog .box-container .box .date span{
+    background-color: #76a713;
+    color: #fff;
+    border-radius: 4px;
+    padding: .3rem 1rem;
+    height: 25px;
+}
+.blog .box-container.box p{
+    font-size: 12px;
+    margin: 1rem 0;
+    line-height: 1.5;
+    color: #aaa;
+}
 
 
 
@@ -285,12 +341,108 @@ header .navbar a:hover{
 
 
 
+.contact {
+    background-image: url(../image/hatter1.png);
+    background: linear-gradient(transparent 70%, var(--black) 30%);
+}
+
+.contact .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    align-items: center;
+    justify-content: center;
+}
+.contacted{
+    width: 70%;
+}
+.contact .box-container .box img {
+    max-width: 50%;
+    width: 100%;
+    margin-left:390px;
+}
+
+.contact .box-container form {
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 .5rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+.contact .box-container form .input-field {
+    position: relative;
+}
+.contact .box-container form .input-field input{
+    border:none;
+}
+.contact .box-container form .input-field,
+.contact .box-container form .input-field textarea {
+    width: 100%;
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: .2rem solid rgba(0, 0, 0, 0.3);
+    font-size: 1.7rem;
+    text-transform: none;
+    outline:none;
+}
+
+.contact .box-container form .input-field textarea {
+    resize: none;
+    height: 15rem;
+}
+
+.contact .box-container form .input-field input:focus,
+.contact .box-container form .input-field textarea:focus {
+    border: var(--red);
+}
+
+label {
+    font-size: 2rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+}
+.input-field:focus~label{
+    top:-.4rem;
+    font-size: 1.5rem;
+    color:var(--red);
+}
+.input-field #name:focus~label,
+.input-field #email:focus~label,
+.input-field #number:focus~label,
+.input-field textarea:focus~label{
+    top:-.4rem;
+    font-size: 1.5rem;
+    color:var(--red);
+}
+input[type="submit"]{
+    border:none;
+}
 
 
 
 
 
 
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 2rem 4%;
+    }
+    section{
+        padding: 3rem 4%;
+    }
+    .usage .row{
+        flex-flow: column;
+    }
+    .usage .row .divider{
+        display: none;
+    }
+    .usage .row .bow-container .box{
+        text-align: center;
+    }
+}
 @media (max-width:760px){
     #menu-bar{
         display:block;
@@ -322,5 +474,25 @@ header .navbar a:hover{
     }
     .fa-times{
         transform: rotate(180deg);
+    }
+    .home .content h3{
+        font-size: 4rem;
+    }
+    .home .content p{
+        font-size: 1.5rem;
+    }
+    .about .row .content .buttons a{
+        width: 95%;
+    }
+    .about .row .content .buttons a:last-child{
+        margin: 1rem 0;
+    }
+}
+@media (max-width:400px){
+    html{
+        font-size: 50%;
+    }
+    .heading{
+        font-size: 3.2rem;
     }
 }
