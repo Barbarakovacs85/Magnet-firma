@@ -80,44 +80,111 @@ header .navbar a{
 header .navbar a:hover{
     color: rgb(14, 45, 14);
 }
+
 #menu-bar{
     font-size: 3rem;
     color: #76a713;
     cursor: pointer;
     display:none;
 }
-.home{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-}
-.home-detail{
-    padding-left:14rem;
-}
-.home-detail h1{
-    font-size: 6rem;
-}
-.home-detail p{
-    font-size: 3rem;
-    margin: 1rem 0;
+.home {
+    position: relative;
+    overflow: hidden;
 }
 
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 110vh; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slideBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slideBox.active {
+    opacity: 1;
+}
+
+.textBox {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 40%;
+    text-align: left;
+    z-index: 1;
+}
+.textBox h1{
+    font-size: 5rem;
+    margin-bottom:5%;
+}
+.textBox p{
+    font-size: 3rem;
+    padding:2%;
+    margin-left:5%;
+}
+.textBox h2{
+    font-size: 3.5rem;
+    text-decoration: bold;
+    padding:5%;
+    margin-left:-5%;
+}
+.imgBox {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 40%;
+    z-index: 1;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    right: 2%; 
+    transform: translateY(-50%);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls li {
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.controls li i {
+    font-size: 5.5rem;
+}
+
+.controls li:hover {
+    opacity: 0.7;
+}
 
 .usage .row{
     display:flex;
     justify-content: center;
-  
+}
+#features .heading {
+   padding-top:1%;
 }
 .usage .row .divider{
-  
     padding: 1rem;
     width: 50%;
-    margin-left:2px;
-    
+    margin-left:-5%;
+    margin-top:-7%;
 }
-
 .usage .row .box-container .box h3{
     color:var(--black);
     font-size: 3.5rem;
@@ -132,8 +199,7 @@ header .navbar a:hover{
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    margin-top: -100px; 
-    margin-bottom:-420px
+    margin-bottom:-5%;
 }
 
 .usage .box-container:nth-child(2) {
@@ -152,22 +218,23 @@ header .navbar a:hover{
 }
 .usage .row .box-container .box .maschine {
     width: 100%;
-    margin-top: 600px;
+    margin-top:140%;
     padding-left:100px;
 }
 .usage .row .box-container .box .cuter {
     width: 100%;
-    margin-top: 100px;
-    padding-right: 20px;
+    margin-top: 10%;
+    padding-right: 20%;
 }
 .usage .row .box-container .box .presser {
     width: 100%;
-    margin-top: 150px;
+    margin-top: -25%;
     padding-right: 20px;
+    
 }
 .usage .row .box-container .box .magnet {
     width: 100%;
-    margin-top: 700px;   
+    margin-top: 200%;  
 }
 
 
@@ -180,16 +247,16 @@ header .navbar a:hover{
 }
 .about .row .image{
     flex:1 1 100rem;
-    margin-top:120px;
+    margin-top:10%;
 }
 .about .row .image img{
-    margin-left:-200px;
+    margin-left:-15%;
     width: 130%;
     margin-bottom:60px;
 }
 .about .row .content{
     flex: 1 1 40rem;
-    padding-bottom: 80px;
+    padding-bottom: -8%;
 }
 .about .row .content h3{
     color:#76a713;
@@ -280,7 +347,7 @@ header .navbar a:hover{
     padding: 5%;
 }
 .heading{
-    margin-top: -50px;
+    margin-top: 5%;
 }
 .blog .box-container{
     padding: 4rem 0;
@@ -288,6 +355,7 @@ header .navbar a:hover{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+
     
 }
 .blog .box-container .box{
@@ -315,7 +383,7 @@ header .navbar a:hover{
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
-    font-size: 14px;
+    font-size:2rem;
 }
 .blog .box-container .box .date span{
     background-color: #76a713;
@@ -344,6 +412,7 @@ header .navbar a:hover{
 .contact {
     background-image: url(../image/hatter1.png);
     background: linear-gradient(transparent 70%, var(--black) 30%);
+    margin-top:-5%;
 }
 
 .contact .box-container {
@@ -355,10 +424,11 @@ header .navbar a:hover{
 .contacted{
     width: 70%;
 }
+
 .contact .box-container .box img {
-    max-width: 50%;
+    max-width: 55%;
     width: 100%;
-    margin-left:390px;
+    margin-left:45%;
 }
 
 .contact .box-container form {

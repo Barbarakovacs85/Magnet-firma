@@ -3,7 +3,8 @@ include '../components/connect.php';
 
 if (isset($_POST['submit'])) {
 
-    $id = unique_id();
+    $warning_msg = array(); 
+
     $email = $_POST['email'];
     $email = filter_var($email, FILTER_SANITIZE_STRING);
 
@@ -11,16 +12,22 @@ if (isset($_POST['submit'])) {
     $pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
     
-   
+    $pass_sha1 = sha1($pass);
+
     $select_seller = $conn->prepare("SELECT * FROM `sellers` WHERE email = ? AND password = ?");
-    $select_seller->execute([$email,$pass]);
+    $select_seller->execute([$email, $pass_sha1]);
     $row = $select_seller->fetch(PDO::FETCH_ASSOC);
 
-    if ($select_seller->rowCount() >0){
+    if ($select_seller->rowCount() > 0){
+       
         setcookie('seller_id', $row['id'], time() + 60*60*24*30, '/');
         header('location:dashboard.php');
-    }else{
-        $warning_msg[] = 'incorrect email or password';
+    } else {
+        
+        $warning_msg[] = 'Incorrect email or password';
+        foreach ($warning_msg as $msg) {
+            echo "<p>$msg</p>";
+        }
     }
 }
 ?>
